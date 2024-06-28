@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Phone Number</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr th:each="datas :${data}">
+    <td th:text="${datas.CustomerId}"></td>
+   <td th:text="${datas.getCustomerName()}"></td>
+        <td th:text="${datas.getCustomerAddress()}"></td>
+        <td th:text="${datas.getPhoneNumber()}"></td>
+    </tr>
+
+    </tbody>
+</table>
+</body>
+</html>
