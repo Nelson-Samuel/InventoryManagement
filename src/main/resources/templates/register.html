@@ -5,7 +5,7 @@
 	<meta name="author" content="Kodinger">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>My Login Page &mdash; Bootstrap 4 Login Page Snippet</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css}" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" th:href="@{/my-login.css}">
 </head>
 <body class="my-login-page">
@@ -17,31 +17,31 @@
 					<div class="card fat mt-5">
 						<div class="card-body">
 							<h4 class="card-title">Register</h4>
-							<form method="POST" th:action="@{/Register}"th:object="${newUser}" class="my-login-validation" novalidate="">
+							<form method="post" th:action="@{/Register}" class="my-login-validation" novalidate="">
 								<div class="form-group">
 									<label for="name">User Name</label>
-									<input id="name" type="text" class="form-control" name="name" required autofocus>
+									<input id="name" type="text" class="form-control" name="CustomerUserName" required autofocus>
 									<div class="invalid-feedback">
 										What's your name?
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="password">Password</label>
-									<input id="password" type="password" class="form-control" name="password" required data-eye>
+									<input id="password" type="password" class="form-control" name="Password" required data-eye>
 									<div class="invalid-feedback">
 										Password is required
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="number">Ph.number</label>
-									<input id="number" type="number" class="form-control" name="number" required>
+									<label for="pnumber">Ph.number</label>
+									<input id="pnumber" type="text" maxlength="10" minlength="10" class="form-control" name="PhoneNumber" required>
 									<div class="invalid-feedback">
 										Ph.num is required
 									</div>
 								</div>
 		<div class="form-group">
-			<label for="Address">Address</label>
-			<textarea name="Address" id="Address" class="form-control" cols="49" required></textarea>
+			<label for="address">Address</label>
+			<textarea name="CustomerAddress" id="address" class="form-control" cols="49" required></textarea>
 			<div class="address-feedback" id="address-feedback" style="font-size: 12px; visibility: hidden; color: red;">
 				Address is required
 			</div>
@@ -73,8 +73,9 @@
 		</div>
 	</section>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script th:src="@{https://code.jquery.com/jquery-3.5.1.slim.min.js}"></script>
+	<script th:src="@{https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js}"></script>
+	<script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js}"></script>
 	<script th:src="@{my-login.js}"></script>
 	<script>
 		function adrvalid(){

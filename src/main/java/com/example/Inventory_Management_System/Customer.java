@@ -43,4 +43,7 @@ public class Customer {
     public void setPassword(String Password) {
         this.Password = Password;
     }
+    public String toString(){
+        return getCustomerId()+getCustomerName()+getCustomerAddress()+getPhoneNumber()+getPassword();
+    }
 }

@@ -31,8 +31,22 @@ public CustomerController(CustomerService customerService) {
     return "register";
  }
  @PostMapping("/Register")
-    public String registerNewCustomer(@ModelAttribute("newUser") Customer customer) {
-     customerService.getNewCustomer(customer);
+    public String registerNewCustomer(@RequestParam String CustomerUserName,@RequestParam String CustomerAddress,
+                                      @RequestParam String PhoneNumber,@RequestParam String Password) {
+    Customer cust=new Customer(0,CustomerUserName,CustomerAddress,PhoneNumber,Password);
+     customerService.getNewCustomer(cust);
      return "redirect:/Login";
+ }
+ @PostMapping("/Login")
+    public  String Validate(@RequestParam String CustomerUserName,@RequestParam String Password){
+    List<Customer> res;
+   res= customerService.Validate(CustomerUserName,Password);
+//   if(res.size()==0){
+//       return "redirect:/popup";
+//   }
+//   else {
+//       return "redirect:/Home";
+//   }
+     return "/popup";
  }
 }

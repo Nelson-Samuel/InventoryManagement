@@ -16,4 +16,7 @@ public class CustomerService {
     public void getNewCustomer(Customer customer ) {
          customerRepository.insertCustomer(customer);
     }
+    public List<Customer> Validate(String Username, String Password    ) {
+        return this.customerRepository.CustomerValidate(Username, Password);
+    }
 }
