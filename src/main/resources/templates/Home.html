@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+<<<<<<< HEAD
     <title>Inventory Management System</title>
     <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css}" rel="stylesheet"
           integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -63,5 +64,30 @@
         </div>
     </div>
 </div>
+=======
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Phone Number</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr th:each="datas :${data}">
+    <td th:text="${datas.CustomerId}"></td>
+   <td th:text="${datas.getCustomerName()}"></td>
+        <td th:text="${datas.getCustomerAddress()}"></td>
+        <td th:text="${datas.getPhoneNumber()}"></td>
+    </tr>
+
+    </tbody>
+</table>
+>>>>>>> 6e315042e6a19c0290370aa9c6e623a6f6982a82
 </body>
 </html>
